@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://user-management-client-neon.vercel.app/")
 public class UserController {
     @Autowired
     UserService userService;
