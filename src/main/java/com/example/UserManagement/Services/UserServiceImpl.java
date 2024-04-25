@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
         newUser.setContactNumber(user.getContactNumber());
         newUser.setQualifications(user.getQualifications());
         newUser.setBio(user.getBio());
+        newUser.setImage(user.getImage());
 
         return userRepository.save(newUser);
     }
@@ -95,13 +96,16 @@ public class UserServiceImpl implements UserService {
         if (user.getContactNumber() != null) {
             updatedUser.setContactNumber(user.getContactNumber());
         }
+        if (user.getImage() != null) {
+            updatedUser.setImage(user.getImage());
+        }
         return userRepository.save(updatedUser);
     }
 
     @Override
     public String deleteUser(Integer userId) throws Exception {
         Optional<User> foundUser = userRepository.findById(userId);
-        if (foundUser.isEmpty()){
+        if (foundUser.isEmpty()) {
             throw new Exception("user not found");
         }
         userRepository.delete(foundUser.get());

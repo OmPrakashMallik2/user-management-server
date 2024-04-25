@@ -20,11 +20,12 @@ public class User {
     private String qualifications;
     private String address;
     private String contactNumber;
+    private String image;
 
     public User() {
     }
 
-    public User(Integer userId, String fullName, String email, String username, String password, String bio, String dateOfBirth, String gender, String qualifications, String address, String contactNumber) {
+    public User(Integer userId, String fullName, String email, String username, String password, String bio, String dateOfBirth, String gender, String qualifications, String address, String contactNumber, String image) {
         this.userId = userId;
         this.fullName = fullName;
         this.email = email;
@@ -36,6 +37,7 @@ public class User {
         this.qualifications = qualifications;
         this.address = address;
         this.contactNumber = contactNumber;
+        this.image = image;
     }
 
     public Integer getUserId() {
@@ -124,5 +126,13 @@ public class User {
 
     public void setQualifications(String qualifications) {
         this.qualifications = qualifications;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
